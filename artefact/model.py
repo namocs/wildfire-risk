@@ -1,0 +1,1 @@
+print ("Wildfire Risk Model")
