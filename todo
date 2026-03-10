@@ -9,8 +9,8 @@
 
 ## Data Needed: Type
 
--- Temperature: float
--- Sunshine: float
--- Relative Humidity: float
--- Wind Speeds: float
--- Rainfall: float
+-- Temperature: float: Celcius
+-- Sunshine: float: hours
+-- Relative Humidity: float: precentage
+-- Wind Speeds: float: km/h
+-- Rainfall: float: mm
