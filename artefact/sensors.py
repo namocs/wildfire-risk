@@ -6,13 +6,10 @@ About: This code will retrieve the data from the sensors and store them in a csv
 """
 from datetime import datetime
 import pandas as pd
-import time
 import os
 
 
 CSV_FILE = "data/sensorData.csv"
-INTERVAL = 5
-
 
 def get_temperature():
     print("Getting temperature data ")
@@ -68,10 +65,7 @@ def add_to_csv(path, row):
 
 
 def start():
-    print(f"Collecting Data every {INTERVAL} seconds")
-    while True:
-        row = collect_data()
-        add_to_csv(CSV_FILE, row)
-        time.sleep(INTERVAL)
+    print(f"Collecting Data...")
+    row = collect_data()
+    add_to_csv(CSV_FILE, row)
 
-start()

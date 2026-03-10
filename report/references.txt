@@ -1,3 +1,9 @@
 ## Python
   1. https://www.w3schools.com/python/pandas/default.asp
-  2. 
+  2. https://pandas.pydata.org/pandas-docs/stable/user_guide/index.html
+  3. https://www.geeksforgeeks.org/pandas/pandas-step-by-step-guide/
+  4. https://realpython.com/pandas-read-write-files/
+
+### API/Unamed Yet
+  1. https://open-meteo.com/en/docs
+  2.
