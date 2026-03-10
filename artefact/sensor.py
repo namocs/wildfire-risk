@@ -1,1 +1,0 @@
-print("Collecting data from sensors...")
