@@ -21,7 +21,7 @@ def run_func(func, name):
         try:
             x += 1
             func()
-            functions.beep(1300) # Digital Output
+            functions.beep(1400) # Digital Output
             print(f"Count: {x}")
         except Exception as e:
             print(f"{name} Error: {e}")
@@ -30,4 +30,3 @@ def run_func(func, name):
 threading.Thread(target=run_func, args=(public_weather.start, "Pubic Wather")).start()
 threading.Thread(target=run_func, args=(sensors.start, "Sensor Data")).start()
 threading.Thread(target=run_func, args=(simulate_data.start, "Simulated Weather")).start()
-

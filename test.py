@@ -6,7 +6,7 @@ import pandas as pd
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_FILE = os.path.join(BASE_DIR, "artefact/data", "simulatedData.csv")
+CSV_FILE = os.path.join(BASE_DIR, "artefact/data", "publicData.csv")
 
 def calculate_risk(temperature, relative_humidity, wind_speed, rainfall, sunshine_hours):
     temp_score     = max(0.0, min(1.0, (temperature - 10) / 30))
