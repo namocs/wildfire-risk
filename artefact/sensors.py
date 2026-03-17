@@ -9,7 +9,8 @@ import pandas as pd
 import os
 
 
-CSV_FILE = "data/sensorData.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE = os.path.join(BASE_DIR, "data", "sensorData.csv")
 
 def get_temperature():
     print("Getting temperature data ")
@@ -65,7 +66,8 @@ def add_to_csv(path, row):
 
 
 def start():
-    print(f"Collecting Data...")
     row = collect_data()
     add_to_csv(CSV_FILE, row)
+    print(f"Collected sensor weather data...") # Digital Output
+
 

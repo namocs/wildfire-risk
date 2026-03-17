@@ -9,7 +9,12 @@
   8. https://docs.python.org/3/library/datetime.html
   9. https://www.w3schools.com/python/python_dictionaries.asp
   10. https://realpython.com/python-dicts/
+  11. https://www.w3schools.com/python/ref_module_threading.asp
+  12. https://realpython.com/intro-to-python-threading/
+  13. https://www.geeksforgeeks.org/python/python-playing-audio-file-in-pygame/
+  14. https://www.pygame.org/docs/ref/music.html
 
+  
 
 ### Raspbbery Pi/ Setup
   1. https://raspberrytips.com/raspberry-pi-headless-setup/
@@ -19,3 +24,8 @@
 ### API/OpenMeteo
   1. https://open-meteo.com/en/docs
   2. https://open-meteo.com/en/features
+
+
+## Sound and Images
+  1. https://pixabay.com/sound-effects/film-special-effects-censor-beep-1-372459/
+  2. https://audiotrimmer.com/

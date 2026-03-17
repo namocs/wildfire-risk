@@ -6,3 +6,12 @@ About: This file will contain useful functions that will be used in other files
        on the terminal
 """
 
+import pygame
+
+def beep(duration_ms):
+    pygame.mixer.init()
+    pygame.mixer.music.load("assets/beep.mp3")
+    pygame.mixer.music.play(-1)
+    pygame.time.wait(duration_ms)
+    pygame.mixer.music.stop()
+    

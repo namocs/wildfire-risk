@@ -12,8 +12,8 @@ import os
 import pandas as pd
 import time
 
-CSV_FILE =  "data/publicData.csv"
-INTERVAL = 600
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE = os.path.join(BASE_DIR, "data", "publicData.csv")
 LATITUDE = 51.889807
 LONGITUDE = -8.472778
 
@@ -60,15 +60,5 @@ def add_to_csv(path, row):
 def start():
     row = collect_data()
     add_to_csv(CSV_FILE, row)
-    print("Saved!!!")
+    print("Collected public weather data...") # Digital Output
 
-
-x = 0
-while True:
-    try:
-        x += 1
-        print(f"Saved {x} times")
-        start()
-    except Exception as e:
-        print(f"Error: {e}")
-    time.sleep(INTERVAL)

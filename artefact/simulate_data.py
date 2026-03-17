@@ -10,8 +10,8 @@ import random
 import time
 import os
 
-CSV_FILE = "data/simulatedData.csv"
-INTERVAL = 600
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_FILE = os.path.join(BASE_DIR, "data", "simulatedData.csv")
 
 def simulate_data():
     chance = random.choices(
@@ -61,13 +61,7 @@ def add_to_csv(path, row):
         encoding="utf=8"
     )
 
-x = 0
-while True:
-    try:
-        x += 1
-        row = simulate_data()
-        add_to_csv(CSV_FILE, row)
-        print(f"Saved {x} times")
-    except Exception as e:
-        print(f"Error: {e}")
-    time.sleep(INTERVAL)
+def start():
+    row = simulate_data()
+    add_to_csv(CSV_FILE, row)
+    print("Collected simulated weather data...")
