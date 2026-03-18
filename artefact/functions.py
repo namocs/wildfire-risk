@@ -8,6 +8,7 @@ About: This file will contain useful functions that will be used in other files
 import pandas as pd
 import requests
 import pygame
+import json
 import os
 
 
@@ -21,7 +22,7 @@ def beep(duration_ms):
     pygame.time.wait(duration_ms)
     pygame.mixer.music.stop()
 
-
+ 
 def send_data(data):
     return data
     
@@ -35,3 +36,17 @@ def add_to_csv(path, row):
         index=False,
         encoding="utf-8"
     )
+    
+def load_json(path):
+    if os.path.exists(path):
+        with open(path, "r") as f:
+            return json.load(f)
+    return []
+
+def save_json(path, data):
+    with open(path,"w") as f:
+        json.dump(data, f, indent=4)
+
+def next_id(records):
+    return records[-1]["id"] + 1 if records else 1
+

@@ -11,7 +11,7 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_FILE = os.path.join(BASE_DIR, "data", "sensorData.csv")
+CSV_FILE = os.path.join(BASE_DIR, "data/csv", "sensorData.csv")
 
 def get_temperature():
     print("Getting temperature data ")

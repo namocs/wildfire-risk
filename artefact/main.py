@@ -13,7 +13,7 @@ import simulate_data
 import sensors
 import functions
 
-INTERVAL = 300 # Run Every 5 Minutes
+INTERVAL = 600 # Run Every 5 Minutes
 
 def run_func(func, name):
     x = 0
@@ -27,6 +27,10 @@ def run_func(func, name):
             print(f"{name} Error: {e}")
         time.sleep(INTERVAL)
 
+
+# Run Data Collection
 threading.Thread(target=run_func, args=(public_weather.start, "Pubic Wather")).start()
 threading.Thread(target=run_func, args=(sensors.start, "Sensor Data")).start()
 threading.Thread(target=run_func, args=(simulate_data.start, "Simulated Weather")).start()
+
+

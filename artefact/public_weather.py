@@ -14,7 +14,7 @@ import pandas as pd
 import time
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_FILE = os.path.join(BASE_DIR, "data", "publicData.csv")
+CSV_FILE = os.path.join(BASE_DIR, "data/csv", "publicData.csv")
 LATITUDE = 51.889807
 LONGITUDE = -8.472778
 

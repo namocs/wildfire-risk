@@ -1,2 +1,2 @@
 # wildfire-risk (Server)
-This program will recieve the data sent from the wildfire risk model and display it on a site it will also create a beep noise each time we recieve data or if there's a high chance of a firework happening
+This program will recieve the data sent from the wildfire risk model and display it on a site it will also create a beep noise for 0.5 seconds on the device that hosts the server each time we recieve data or if there's a high chance of a wildfire happening.

@@ -1,7 +1,16 @@
+"""
+File: server.py
+
+About: This will run the flask web server and recieve data from the raspberry pi model
+       and display the statistics to the user.
+"""
 from flask import Flask, request, jsonify
+from simulated import simulated_bp
 
 app = Flask(__name__)
-API_KEY = "supersecret"
+API_KEY = "serverkey"
+
+app.register_blueprint(simulated_bp, url_prefix="/simulated")
 
 @app.route("/")
 def main():
@@ -26,4 +35,4 @@ def get_data():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
+    app.run(debug=True, port=8000, host="0.0.0.0")

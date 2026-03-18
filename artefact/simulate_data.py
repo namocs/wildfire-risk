@@ -4,6 +4,7 @@ File: simeulate_data.py
 About: This will insert simulated weather data into data/simulatedData.csv, so that we will be able
        to see what the wildfire risk would look like if the data was completely different
 """
+
 from functions import add_to_csv
 from datetime import datetime
 import pandas as pd
@@ -12,7 +13,7 @@ import time
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_FILE = os.path.join(BASE_DIR, "data", "simulatedData.csv")
+CSV_FILE = os.path.join(BASE_DIR, "data/csv", "simulatedData.csv")
 
 def simulate_data():
     chance = random.choices(

@@ -13,12 +13,15 @@
   12. https://realpython.com/intro-to-python-threading/
   13. https://www.geeksforgeeks.org/python/python-playing-audio-file-in-pygame/
   14. https://www.pygame.org/docs/ref/music.html
-
+  15. https://www.w3schools.com/python/python_json.asp
+  16. https://www.geeksforgeeks.org/python/python-json/
+  17. 
 
 ## Python - Flask
   1. https://www.geeksforgeeks.org/python/flask-tutorial/
   2. https://www.geeksforgeeks.org/python/flask-http-methods-handle-get-post-requests/
-  3. 
+  3. https://www.geeksforgeeks.org/python/flask-blueprints/
+
   
 
 ### Raspbbery Pi/ Setup
