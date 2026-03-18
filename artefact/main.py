@@ -21,7 +21,7 @@ def run_func(func, name):
         try:
             x += 1
             func()
-            functions.beep(1400) # Digital Output (Beep Noise)
+            # functions.beep(1400) # Digital Output (Beep Noise)
             print(f"Count: {x}")
         except Exception as e:
             print(f"{name} Error: {e}")

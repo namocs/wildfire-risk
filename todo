@@ -23,3 +23,6 @@
                 how it works every 30 mins we get the average of what we've collected since it's every 5 mins that would be every 6 times and we just crate a risk model with those values
 
                 and the risk model just does every 30 mins
+
+
+-- Do write up this is really important!!!

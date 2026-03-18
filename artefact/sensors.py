@@ -30,10 +30,10 @@ def get_rainfall():
     return 33.0
 
 
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # This will bundle all the collected data together
 def collect_data():
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     temperature = float(get_temperature())
     relative_humidity = float(get_relative_humidity())
     wind_speed = float(get_wind_speed())

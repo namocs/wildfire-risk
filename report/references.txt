@@ -34,3 +34,25 @@
 ## Sound and Images
   1. https://pixabay.com/sound-effects/film-special-effects-censor-beep-1-372459/
   2. https://audiotrimmer.com/
+
+
+## Wildfire Risk Calc
+  1. https://v0-fire-risk-calculator-mp.vercel.app/
+  2. https://agentcalc.com/wildfire-risk-index-calculator
+  3. https://www.calculatorultra.com/en/tool/fire-weather-index-calculator.html
+  4. https://wikifire.wsl.ch/tiki-index259b.html
+  5. https://cwfis.cfs.nrcan.gc.ca/background/summary/fwi
+  6. https://wikifire.wsl.ch/tiki-indexc219.html
+
+## News/Surces
+  1. https://www.rte.ie/news/ireland/2021/0425/1211931-killarney-national-park-fire/
+  2. https://www.met.ie/forecasts/farming/graphs/fire-weather-index
+  3. https://natural-resources.canada.ca/forest-forestry/wildland-fires/canada-fire-weather-index-system
+  4. https://www.met.ie/ga/education/publications/other-met-eireann-publications
+  5. https://www.irishexaminer.com/news/spotlight/arid-40279187.html
+
+
+
+## Source Codes
+  1. https://v0-fire-risk-calculator-mp.vercel.app/_next/static/chunks/app/page-03c41fea44817956.js
+  2.https://webcrack.netlify.app/
