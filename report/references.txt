@@ -14,6 +14,11 @@
   13. https://www.geeksforgeeks.org/python/python-playing-audio-file-in-pygame/
   14. https://www.pygame.org/docs/ref/music.html
 
+
+## Python - Flask
+  1. https://www.geeksforgeeks.org/python/flask-tutorial/
+  2. https://www.geeksforgeeks.org/python/flask-http-methods-handle-get-post-requests/
+  3. 
   
 
 ### Raspbbery Pi/ Setup

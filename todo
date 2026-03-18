@@ -1,16 +1,25 @@
 ## Data Needed 
 
 -- Temperature
--- Sunshine
 -- Relative Humidity
 -- Wind Speeds
 -- Rainfall
+-- Is_Raining
 
 
 ## Data Needed: Type
 
 -- Temperature: float: Celcius
--- Sunshine: float: hours
 -- Relative Humidity: float: precentage
 -- Wind Speeds: float: km/h
 -- Rainfall: float: mm
+-- Is_Raining: binary
+
+
+### Ideas/Questions
+--- Risk Model: We get the average of each value every 30 minutes 
+                but we log data every 5 minutes like everything
+
+                how it works every 30 mins we get the average of what we've collected since it's every 5 mins that would be every 6 times and we just crate a risk model with those values
+
+                and the risk model just does every 30 mins

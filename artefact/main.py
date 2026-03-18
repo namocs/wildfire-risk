@@ -13,7 +13,7 @@ import simulate_data
 import sensors
 import functions
 
-INTERVAL = 600
+INTERVAL = 300 # Run Every 5 Minutes
 
 def run_func(func, name):
     x = 0
@@ -21,7 +21,7 @@ def run_func(func, name):
         try:
             x += 1
             func()
-            functions.beep(1400) # Digital Output
+            functions.beep(1400) # Digital Output (Beep Noise)
             print(f"Count: {x}")
         except Exception as e:
             print(f"{name} Error: {e}")

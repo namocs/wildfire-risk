@@ -5,6 +5,7 @@ About: This file will contain useful functions that will be used in other files
        for example a functoin that plays a beep sound and a function that displays colour and text
        on the terminal
 """
+import pandas as pd
 import requests
 import pygame
 import os
@@ -24,3 +25,13 @@ def beep(duration_ms):
 def send_data(data):
     return data
     
+def add_to_csv(path, row):
+    file_exists = os.path.exists(path)
+    data = pd.DataFrame([row])
+    data.to_csv(
+        path,
+        mode="a",
+        header=not file_exists,
+        index=False,
+        encoding="utf-8"
+    )
