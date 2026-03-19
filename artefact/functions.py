@@ -38,10 +38,17 @@ def add_to_csv(path, row):
     )
     
 def load_json(path):
-    if os.path.exists(path):
+    if not os.path.exists(path):
+        return []
+    try:
         with open(path, "r") as f:
-            return json.load(f)
-    return []
+            info = f.read().strip()
+            if not info:
+                return []
+            return json.loads(info)
+    except json.JSONDecodeError:
+        return []
+    
 
 def save_json(path, data):
     with open(path,"w") as f:

@@ -2,23 +2,36 @@
 File: simeulate_data.py
 
 About: This will insert simulated weather data into data/simulatedData.csv, so that we will be able
-       to see what the wildfire risk would look like if the data was completely different
+       to see what the wildfire risk would look like if the data was completely different also completes Basic requirments 3 as
+       I am simulating data and creating a what if statement and notifying the web server
 """
-
+from dotenv import load_dotenv
 from functions import add_to_csv
 from datetime import datetime
 import pandas as pd
 import random
+import requests
 import time
 import os
+
+load_dotenv()
+
+FLASK_IP = os.getenv("FLASK_IP")
+FLASK_PORT = os.getenv("FLASK_PORT")
+
+FLASK_ALERT = f"http://{FLASK_IP}:{FLASK_PORT}/simulated/alert"
+SIM_API_KEY = os.getenv("SIM_API_KEY")
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "data/csv", "simulatedData.csv")
 
+
+
 def simulate_data():
     chance = random.choices(
         ["extreme", "high", "moderate"],
-        weights=[50, 35, 15]
+        weights=[25, 35, 40]
     )[0]
 
     if chance == "extreme":
@@ -48,8 +61,34 @@ def simulate_data():
         "is_raining": 1 if rainfall > 0.1 else 0,
         "scenario": chance
     }
-    
+
+def send_simulated_alert(row):
+    try:
+        resp = requests.post(
+            url=f"{FLASK_ALERT}",
+            json=row,
+            headers={"X-SIM-API-KEY": SIM_API_KEY},
+            timeout= 5
+        )
+    except Exception as e:
+        print(f"SIM ALERT ERROR: {e}")
+
 def start():
     row = simulate_data()
     add_to_csv(CSV_FILE, row)
     print("Collected simulated weather data...")
+
+    # Send Data to RPI if "extreme" level scenario
+    if row['scenario'] == "extreme":
+        send_simulated_alert(row=row)
+        print("SENT REQUEST TO SERVER!!!!!!!")
+
+def temp_run():
+    x = 0
+    while True:
+        x += 1
+        print(f"Count {x}")
+        time.sleep(2)
+        start()
+if __name__ == "__main__":
+    temp_run()

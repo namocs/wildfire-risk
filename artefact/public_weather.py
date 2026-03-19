@@ -24,26 +24,29 @@ def get_weather():
     params = {
         "latitude": LATITUDE,
         "longitude": LONGITUDE,
-        "minutely_15": "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,",        
+        "current": "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m",        
         "timezone": "Europe/Dublin",
         "wind_speed_unit": "kmh",
-        "forecast_minutely_15": 1
     }
-    resp = requests.get(url=url, params=params)
-    return resp.json()["minutely_15"]
+    resp = requests.get(url=url, params=params, timeout=5)
+    data = resp.json()
+    print(f"RESPONSE  CODE: {resp.status_code}")
+    print(f"RAW DATA: {data["current"]}")
+    return data["current"]
 
 
 def collect_data():
     m = get_weather()
-    raw_time = m["time"][-1]
-    timestamp = datetime.strptime(raw_time, "%Y-%m-%dT%H:%M").strftime("%Y-%m-%d %H:%M:%S")
-    rainfall =m["precipitation"][-1]
+    raw_time = m["time"]
+    # timestamp = datetime.strptime(raw_time, "%Y-%m-%dT%H:%M").strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    rainfall =m["precipitation"]
     return {
         "timestamp": timestamp,
-        "temperature": m["temperature_2m"][-1],
-        "relative_humidity_pct": m["relative_humidity_2m"][-1],
-        "wind_speed_kmh": m["wind_speed_10m"][-1],
-        "rainfall_mm": m["precipitation"][-1],
+        "temperature": m["temperature_2m"],
+        "relative_humidity_pct": m["relative_humidity_2m"],
+        "wind_speed_kmh": m["wind_speed_10m"],
+        "rainfall_mm": m["precipitation"],
         "is_raining": 1 if rainfall > 0.1 else 0,
     }
 

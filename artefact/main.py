@@ -10,10 +10,16 @@ import time
 
 import public_weather
 import simulate_data
+import risk_model
 import sensors
 import functions
+import os
 
-INTERVAL = 600 # Run Every 5 Minutes
+INTERVAL = 900 # Runs every 15 minutes due to Open-Meteo's latest weather data which is only every 15 mins
+PUBLIC_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "publicData.csv")
+SIMULATED_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "simulatedData.csv")
+SENSOR_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "sensorData.csv")
+
 
 def run_func(func, name):
     x = 0
@@ -34,3 +40,6 @@ threading.Thread(target=run_func, args=(sensors.start, "Sensor Data")).start()
 threading.Thread(target=run_func, args=(simulate_data.start, "Simulated Weather")).start()
 
 
+# Run Risk Model
+time.sleep(5) # Start Model after short delay
+threading.Thread(target=risk_model.row_model, args=(PUBLIC_CSV,SIMULATED_CSV)).start()

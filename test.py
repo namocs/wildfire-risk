@@ -88,6 +88,7 @@ def analyse(csv_path_1, csv_path_2=None):
     return pd.DataFrame(results)
 
 
+
 if __name__ == "__main__":
     print("=" * 55)
     print("  WILDFIRE RISK MODEL — Cork City, Ireland")
