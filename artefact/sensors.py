@@ -6,22 +6,40 @@ About: This code will retrieve the data from the sensors and store them in a csv
 """
 from functions import add_to_csv
 from datetime import datetime
+import adafruit_dht
+import board
+import requests
 import pandas as pd
 import os
-import requests
 
 LATITUDE = 51.889807
 LONGITUDE = -8.472778
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_DIR, "data/csv", "sensorData.csv")
 
+dht = adafruit_dht.DHT11(board.D4)
+
+
 def get_temperature():
-    print("Getting temperature data ")
-    return 10.0 
+    try:
+        temp = dht.temperature
+        if temp is not None:
+            print(f"Temperature: {temp} C")
+            return float(temp)
+    except RuntimeError as e:
+        print(f"Temprature read error: {e}")
+    return 0.0
 
 def get_relative_humidity():
-    print("Getting Relative Humidity Data in %")
-    return 20.0
+    try:
+        humid = dht.humidity
+        if humid is not None:
+            print(f"Humidity: {humid}%")
+            return float(humid)
+    except RuntimeError as e:
+        print(f"Humidity read error: {e}")
+    return 0.0
+
 
 def get_wind_speed():
     print("Getting Wind Speed in km/h")
