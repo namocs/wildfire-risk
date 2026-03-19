@@ -19,7 +19,7 @@ load_dotenv()
 FLASK_IP = os.getenv("FLASK_IP")
 FLASK_PORT = os.getenv("FLASK_PORT")
 
-FLASK_ALERT = f"http://{FLASK_IP}:{FLASK_PORT}/simulated/alert"
+FLASK_ALERT = f"http://{FLASK_IP}:{FLASK_PORT}/simulated//alert"
 SIM_API_KEY = os.getenv("SIM_API_KEY")
 
 

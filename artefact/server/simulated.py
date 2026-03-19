@@ -33,7 +33,7 @@ def sim_get_data():
         "recieved": data
     }), 200
 
-@simulated_bp.route("get_data/alert", methods=["POST"])
+@simulated_bp.route("/alert", methods=["POST"])
 def sim_emergency():
     client_key= request.headers.get("X-SIM-API-KEY")
     if client_key != SIM_API_KEY:
@@ -49,7 +49,7 @@ def sim_emergency():
         beep(2000)
     except Exception as e:
         print(f"BEEP ERROR: {e}")
-        
+
     return jsonify({
         "status": "success",
         "recieved": data
