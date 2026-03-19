@@ -1,4 +1,4 @@
-timestamp,temperature,relative_humidity_pct,wind_speed_kmh,rainfall_mm,is_raining,scenario
+timestamp,temperature,relative_humidity_pct,wind_speed_kmh,rainfall_mm,is_windy,scenario
 2026-03-19 03:45:26,41.1,12.8,78.9,0.0,0,extreme
 2026-03-19 04:00:30,27.6,45.2,16.6,0.3,1,moderate
 2026-03-19 04:15:30,21.0,39.3,13.0,0.8,1,moderate

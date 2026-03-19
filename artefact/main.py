@@ -15,7 +15,7 @@ import sensors
 import functions
 import os
 
-INTERVAL = 900 # Runs every 15 minutes due to Open-Meteo's latest weather data which is only every 15 mins
+INTERVAL = 5 # Runs every 15 minutes due to Open-Meteo's latest weather data which is only every 15 mins
 PUBLIC_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "publicData.csv")
 SIMULATED_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "simulatedData.csv")
 SENSOR_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "sensorData.csv")

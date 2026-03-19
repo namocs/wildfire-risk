@@ -59,7 +59,7 @@ def simulate_data():
         "relative_humidity_pct": relative_humidity,
         "wind_speed_kmh": wind_speed,
         "rainfall_mm": rainfall,
-        "is_raining": 1 if rainfall > 0.1 else 0,
+        "is_windy": 1 if wind_speed > 20 else 0,
         "scenario": chance
     }
 

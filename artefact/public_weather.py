@@ -40,14 +40,14 @@ def collect_data():
     raw_time = m["time"]
     # timestamp = datetime.strptime(raw_time, "%Y-%m-%dT%H:%M").strftime("%Y-%m-%d %H:%M:%S")
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    rainfall =m["precipitation"]
+    wind = m["wind_speed_10m"]
     return {
         "timestamp": timestamp,
         "temperature": m["temperature_2m"],
         "relative_humidity_pct": m["relative_humidity_2m"],
         "wind_speed_kmh": m["wind_speed_10m"],
         "rainfall_mm": m["precipitation"],
-        "is_raining": 1 if rainfall > 0.1 else 0,
+        "is_windy": 1 if wind > 20 else 0
     }
 
 def start():

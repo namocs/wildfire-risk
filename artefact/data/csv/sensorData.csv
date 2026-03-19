@@ -1,4 +1,4 @@
-timestamp,temperature,relative_humidity_pct,wind_speed_kmh,rainfall_mm,is_raining
+timestamp,temperature,relative_humidity_pct,wind_speed_kmh,rainfall_mm,is_windy
 2026-03-19 03:45:26,10.0,20.0,33.0,0.0,0
 2026-03-19 04:00:27,10.0,20.0,33.0,0.0,0
 2026-03-19 04:15:28,10.0,20.0,33.0,0.0,0
