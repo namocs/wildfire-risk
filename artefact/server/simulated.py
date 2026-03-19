@@ -1,3 +1,9 @@
+"""
+File: simulated.py
+
+About: This code runs the backend for our adaptive feedback system and plays 
+        the beep sound when recieving a request
+"""
 from flask import Blueprint, jsonify, request
 import pygame
 
@@ -46,10 +52,11 @@ def sim_emergency():
     print(f"DATA: {data}")
 
     try:
-        beep(2000)
+        beep(2500)
     except Exception as e:
         print(f"BEEP ERROR: {e}")
-
+    print("ALERT!!!\nALERT!!!!!")
+    
     return jsonify({
         "status": "success",
         "recieved": data

@@ -2,7 +2,7 @@
 File: main.py
 
 About: This code will run the collection data for public weather data, sensor and simulated data.
-       It will be running every 10 minutes until this program is stopped and our model will also
+       It will be running every 15 minutes until this program is stopped and our model will also
        check for the risk and send ata
 """
 import threading
@@ -20,6 +20,13 @@ PUBLIC_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "publicData.csv
 SIMULATED_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "simulatedData.csv")
 SENSOR_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "sensorData.csv")
 
+def run_simulated_window():
+    while True:
+        try:
+            risk_model.run_window(SIMULATED_CSV, json_path=risk_model.SIM_WINDOW_JSON)
+        except Exception as e:
+            print(f"Simulated Window Error: {e}")
+        time.sleep(1800)
 
 def run_func(func, name):
     x = 0
@@ -27,11 +34,13 @@ def run_func(func, name):
         try:
             x += 1
             func()
-            # functions.beep(1400) # Digital Output (Beep Noise)
+            functions.beep(2000) # Digital Output (Beep Noise)
             print(f"Count: {x}")
         except Exception as e:
             print(f"{name} Error: {e}")
         time.sleep(INTERVAL)
+
+
 
 
 # Run Data Collection

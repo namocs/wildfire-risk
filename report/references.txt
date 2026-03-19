@@ -15,7 +15,8 @@
   14. https://www.pygame.org/docs/ref/music.html
   15. https://www.w3schools.com/python/python_json.asp
   16. https://www.geeksforgeeks.org/python/python-json/
-  17. 
+  17. https://pypi.org/project/python-dotenv/
+  18. https://github.com/theskumar/python-dotenv
 
 ## Python - Flask
   1. https://www.geeksforgeeks.org/python/flask-tutorial/

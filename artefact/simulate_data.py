@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from functions import add_to_csv
 from datetime import datetime
 import pandas as pd
+import risk_model
 import random
 import requests
 import time
@@ -69,11 +70,16 @@ def send_simulated_alert(row):
             json=row,
             headers={"X-SIM-API-KEY": SIM_API_KEY},
             timeout= 5
-        )
+        )  
+        print(f"SIMULATED ALERT SENT: {resp.status_code}")
     except Exception as e:
         print(f"SIM ALERT ERROR: {e}")
 
+sim_row_counter  = 0
+
+
 def start():
+    global sim_row_counter
     row = simulate_data()
     add_to_csv(CSV_FILE, row)
     print("Collected simulated weather data...")
@@ -82,13 +88,8 @@ def start():
     if row['scenario'] == "extreme":
         send_simulated_alert(row=row)
         print("SENT REQUEST TO SERVER!!!!!!!")
-
-def temp_run():
-    x = 0
-    while True:
-        x += 1
-        print(f"Count {x}")
-        time.sleep(2)
-        start()
-if __name__ == "__main__":
-    temp_run()
+    
+    sim_row_counter += 1
+    if sim_row_counter % 2 == 0:
+        risk_model.run_window(CSV_FILE, json_path=risk_model.SIM_WINDOW_JSON)
+        print(f"SIMULATED MODULE: Ran Model after {sim_row_counter} rows")

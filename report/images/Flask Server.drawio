@@ -1,0 +1,62 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0" version="29.6.4">
+  <diagram name="Page-1" id="wHLdc5DLW7qce-YrCLfn">
+    <mxGraphModel dx="1947" dy="609" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="adOGfGtNtXEYLKbdZL90-3" edge="1" parent="1" source="adOGfGtNtXEYLKbdZL90-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;curved=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="90" />
+              <mxPoint x="410" y="90" />
+            </Array>
+            <mxPoint x="410" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-6" edge="1" parent="1" source="adOGfGtNtXEYLKbdZL90-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="adOGfGtNtXEYLKbdZL90-83">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" value="&lt;h2&gt;&lt;font style=&quot;font-size: 19px;&quot;&gt;Run server.py on PC/Mac&lt;/font&gt;&lt;/h2&gt;" vertex="1">
+          <mxGeometry height="60" width="290" x="265" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-85" edge="1" parent="1" source="adOGfGtNtXEYLKbdZL90-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="adOGfGtNtXEYLKbdZL90-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-83" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" value="&lt;div style=&quot;padding-bottom: 0px; margin-bottom: 5px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Flask app starts&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;u&gt;listening on port 8000&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="380" x="220" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-88" edge="1" parent="1" source="adOGfGtNtXEYLKbdZL90-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="adOGfGtNtXEYLKbdZL90-86">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="50" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-90" connectable="0" parent="adOGfGtNtXEYLKbdZL90-88" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 27px;&quot;&gt;&lt;b&gt;/&lt;font&gt;alert&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4529" y="-1" as="geometry">
+            <mxPoint x="-81" y="66" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-89" edge="1" parent="1" source="adOGfGtNtXEYLKbdZL90-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-84" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a0522d;fontColor=#ffffff;strokeColor=#6D1F00;" value="&lt;div style=&quot;padding-bottom: 0px; margin-bottom: 5px;&quot;&gt;&lt;font style=&quot;font-size: 21px;&quot;&gt;&lt;b&gt;Waiting for incoming POST requests&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="420" x="200" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-86" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;" value="&lt;h2&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;/alert&lt;/b&gt;&lt;/font&gt;&lt;/h2&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;u&gt;from risk_model.py&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="200" x="-50" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-87" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6d8764;fontColor=#ffffff;strokeColor=#3A5431;fontStyle=4" value="&lt;h2&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;/simulated/alert&lt;/b&gt;&lt;/font&gt;&lt;/h2&gt;&lt;div&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;u&gt;from simulate_data.py&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="220" x="700" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="adOGfGtNtXEYLKbdZL90-92" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;&lt;b&gt;/simulated/alert&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry x="830" y="320" as="geometry">
+            <mxPoint x="-34" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -2,10 +2,11 @@
 File: risk_model.py
 
 About: This code will pull all the data from the csv that it's give and it will
-       crate a risk model 
+       crate a risk model and then it will save it into JSON File per 30 mins and each row also
+       we have hte what if simulations and the adaptive feedback system.
 """
 from datetime import datetime, timedelta
-from functions import load_json, save_json
+from functions import load_json, save_json, send_alert
 import pandas as pd
 import json
 import time
@@ -15,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROW_JSON = os.path.join(BASE_DIR, "data/json", "each_row.json")
 WINDOW_JSON = os.path.join(BASE_DIR, "data/json", "every_thirty.json")
+SIM_WINDOW_JSON = os.path.join(BASE_DIR, "data/json","sim_thirty.json")
 
 def next_id(records):
    if not records:
@@ -62,12 +64,37 @@ def load_data(csv_path1, csv_path2=None):
       df = df1
    
    df["timestamp"] = pd.to_datetime(df["timestamp"])
+   df["timestamp"] = df["timestamp"].dt.round("15min") # Had issue with seconds and duplicates in each_row.json
 
    df = df.groupby("timestamp").mean(numeric_only=True).reset_index()
    df = df.sort_values("timestamp").reset_index(drop=True)
 
    return df
 
+### Functions for Advanced What if? simulatoins
+def what_if_drought(row):
+   # What if the temperature increases by 10 Celcius and rainfall is 0.0mm
+   risk = calculate_risk(
+      row["temperature"] + 8,
+      row["relative_humidity_pct"],
+      row["wind_speed_kmh"],
+      0.0,
+   )
+   label = get_risk_label(risk)
+   print(f"What-If-Drought: {risk}% {label}")
+   return risk, label
+
+def what_if_high_wind(row):
+   # What if the wind speed doubles and rainfall is 0.0mm(stormy conditions)
+   risk = calculate_risk(
+      row["temperature"],
+      row["relative_humidity_pct"],
+      row["wind_speed_kmh"] * 2,
+      row["rainfall_mm"],
+   )
+   label = get_risk_label(risk)
+   print(f"What-If-High-Wind: Wind x 2: {risk}% {label}")
+   return risk, label
 
 # Calculates Risk each time a row is added
 def row_model(csv_path1, csv_path2=None):
@@ -104,6 +131,14 @@ def row_model(csv_path1, csv_path2=None):
             }
 
             records.append(record)
+
+            # Adaptive Feedback System for the Risk
+            send_alert(record) 
+            
+            # Advanced Requirment 2: What if simulations?
+            what_if_drought(row)
+            what_if_high_wind(row)
+
             print(f"Row: {ts} {risk}% {label}")
 
             row_counter += 1
@@ -120,7 +155,7 @@ def row_model(csv_path1, csv_path2=None):
       time.sleep(300)
 
 # Calculates risk model that runs every 30 minutes
-def run_window(csv_path1, csv_path2):
+def run_window(csv_path1, csv_path2=None, json_path=WINDOW_JSON):
    source = os.path.basename(csv_path1).replace(".csv", "")
    if csv_path2:
       source = os.path.basename(csv_path1).replace(".csv", "") + " + " + os.path.basename(csv_path2).replace(".csv", "") + " (combined)"
@@ -141,7 +176,7 @@ def run_window(csv_path1, csv_path2):
             latest["rainfall_mm"]
          )
          label = get_risk_label(risk)
-         records = load_json(WINDOW_JSON)
+         records = load_json(json_path)
          record = {
             "id": next_id(records),
             "timestamp": window_end.strftime("%Y-%m-%d %H:%M"),
@@ -153,8 +188,11 @@ def run_window(csv_path1, csv_path2):
          }
 
          records.append(record)
-         save_json(WINDOW_JSON, records)
-
+         save_json(json_path, records)
+         
+         # Adaptive Feedback System for the Risk
+         send_alert(record) 
+         
          print(f"30 min windows - {record['time_range']}\nRisk: {risk}% - {label}")
 
    except Exception as e:

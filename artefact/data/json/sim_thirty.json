@@ -1,1 +1,137 @@
-[]
+[
+    {
+        "id": 1,
+        "timestamp": "2026-03-19 04:00",
+        "time_range": "03:30 - 04:00",
+        "risk_label": "HIGH",
+        "percentage": "54.5%",
+        "float": 0.55,
+        "source": "simulatedData"
+    },
+    {
+        "id": 2,
+        "timestamp": "2026-03-19 04:30",
+        "time_range": "04:00 - 04:30",
+        "risk_label": "VERY HIGH",
+        "percentage": "76.0%",
+        "float": 0.76,
+        "source": "simulatedData"
+    },
+    {
+        "id": 3,
+        "timestamp": "2026-03-19 05:00",
+        "time_range": "04:30 - 05:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "78.4%",
+        "float": 0.78,
+        "source": "simulatedData"
+    },
+    {
+        "id": 4,
+        "timestamp": "2026-03-19 05:30",
+        "time_range": "05:00 - 05:30",
+        "risk_label": "HIGH",
+        "percentage": "47.4%",
+        "float": 0.47,
+        "source": "simulatedData"
+    },
+    {
+        "id": 5,
+        "timestamp": "2026-03-19 06:00",
+        "time_range": "05:30 - 06:00",
+        "risk_label": "HIGH",
+        "percentage": "58.2%",
+        "float": 0.58,
+        "source": "simulatedData"
+    },
+    {
+        "id": 6,
+        "timestamp": "2026-03-19 06:30",
+        "time_range": "06:00 - 06:30",
+        "risk_label": "HIGH",
+        "percentage": "53.3%",
+        "float": 0.53,
+        "source": "simulatedData"
+    },
+    {
+        "id": 7,
+        "timestamp": "2026-03-19 07:00",
+        "time_range": "06:30 - 07:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "72.0%",
+        "float": 0.72,
+        "source": "simulatedData"
+    },
+    {
+        "id": 8,
+        "timestamp": "2026-03-19 07:30",
+        "time_range": "07:00 - 07:30",
+        "risk_label": "VERY HIGH",
+        "percentage": "78.8%",
+        "float": 0.79,
+        "source": "simulatedData"
+    },
+    {
+        "id": 9,
+        "timestamp": "2026-03-19 08:00",
+        "time_range": "07:30 - 08:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "76.6%",
+        "float": 0.77,
+        "source": "simulatedData"
+    },
+    {
+        "id": 10,
+        "timestamp": "2026-03-19 08:30",
+        "time_range": "08:00 - 08:30",
+        "risk_label": "VERY HIGH",
+        "percentage": "73.1%",
+        "float": 0.73,
+        "source": "simulatedData"
+    },
+    {
+        "id": 11,
+        "timestamp": "2026-03-19 09:00",
+        "time_range": "08:30 - 09:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "81.3%",
+        "float": 0.81,
+        "source": "simulatedData"
+    },
+    {
+        "id": 12,
+        "timestamp": "2026-03-19 09:30",
+        "time_range": "09:00 - 09:30",
+        "risk_label": "HIGH",
+        "percentage": "53.1%",
+        "float": 0.53,
+        "source": "simulatedData"
+    },
+    {
+        "id": 13,
+        "timestamp": "2026-03-19 10:00",
+        "time_range": "09:30 - 10:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "80.7%",
+        "float": 0.81,
+        "source": "simulatedData"
+    },
+    {
+        "id": 14,
+        "timestamp": "2026-03-19 10:30",
+        "time_range": "10:00 - 10:30",
+        "risk_label": "EXTREME",
+        "percentage": "93.0%",
+        "float": 0.93,
+        "source": "simulatedData"
+    },
+    {
+        "id": 15,
+        "timestamp": "2026-03-19 11:00",
+        "time_range": "10:30 - 11:00",
+        "risk_label": "VERY HIGH",
+        "percentage": "76.2%",
+        "float": 0.76,
+        "source": "simulatedData"
+    }
+]
