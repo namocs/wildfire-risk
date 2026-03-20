@@ -162,7 +162,7 @@ def run_window(csv_path1, csv_path2=None, json_path=WINDOW_JSON):
 
    try:
       df = load_data(csv_path1, csv_path2)
-      windows = df.set_index("timestamp").resample("20s").mean(numeric_only=True).dropna()
+      windows = df.set_index("timestamp").resample("30min").mean(numeric_only=True).dropna()
       windows = windows.reset_index()
 
       if not windows.empty:
