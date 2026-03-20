@@ -152,7 +152,7 @@ def row_model(csv_path1, csv_path2=None):
       except Exception as e:
          print(f"ERROR: At row_model: {e}")
 
-      time.sleep(2) # Changed from 300 to 2 seconds
+      time.sleep(300) 
 
 # Calculates risk model that runs every 30 minutes
 def run_window(csv_path1, csv_path2=None, json_path=WINDOW_JSON):
@@ -162,7 +162,7 @@ def run_window(csv_path1, csv_path2=None, json_path=WINDOW_JSON):
 
    try:
       df = load_data(csv_path1, csv_path2)
-      windows = df.set_index("timestamp").resample("20S").mean(numeric_only=True).dropna()
+      windows = df.set_index("timestamp").resample("20s").mean(numeric_only=True).dropna()
       windows = windows.reset_index()
 
       if not windows.empty:

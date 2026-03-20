@@ -15,18 +15,10 @@ import sensors
 import functions
 import os
 
-INTERVAL = 5 # Runs every 15 minutes due to Open-Meteo's latest weather data which is only every 15 mins
+INTERVAL = 900 # Runs every 15 minutes due to Open-Meteo's latest weather data which is only every 15 mins
 PUBLIC_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "publicData.csv")
 SIMULATED_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "simulatedData.csv")
 SENSOR_CSV = os.path.join(os.path.dirname(__file__), "data/csv", "sensorData.csv")
-
-def run_simulated_window():
-    while True:
-        try:
-            risk_model.run_window(SIMULATED_CSV, json_path=risk_model.SIM_WINDOW_JSON)
-        except Exception as e:
-            print(f"Simulated Window Error: {e}")
-        time.sleep(1800)
 
 def run_func(func, name):
     x = 0
